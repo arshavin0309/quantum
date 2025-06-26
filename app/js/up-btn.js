@@ -6,7 +6,7 @@ $(function () {
 
     function trackScroll() {
         const scrolled = window.pageYOffset;
-        const show = scrolled > 100;
+        const show = scrolled > 50;
 
         $btn.toggleClass('show', show);
         $header.toggleClass('scrolled', show);

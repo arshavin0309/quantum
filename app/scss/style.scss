@@ -21,7 +21,7 @@
     transition: var(--transition);
 
     scrollbar-width: thin;
-    scrollbar-color: var(--black) var(--white);
+    scrollbar-color: var(--gold) var(--black);
 
     &::-webkit-scrollbar {
         height: 12px;
@@ -29,14 +29,18 @@
     }
 
     &::-webkit-scrollbar-track {
-        background: var(--white);
+        background: var(--black);
     }
 
     &::-webkit-scrollbar-thumb {
-        background-color: var(--black);
+        background-color: var(--gold);
         border-radius: 5px;
-        border: 3px solid var(--white);
+        border: 3px solid var(--black);
     }
+}
+
+body {
+    background: var(--black);
 }
 
 .upButton {
@@ -50,7 +54,7 @@
     transition: all .2s ease-in-out;
     transform: scale(0);
     pointer-events: none;
-    background: var(--yellow) url(../images/up-btn-black.svg) center / 20px no-repeat;
+    background: var(--gold) url(../images/up-btn-black.svg) center / 20px no-repeat;
     border-radius: 50%;
     box-shadow: 0px 0px 12px 4px rgba(0, 0, 0, 0.2);
 
@@ -101,9 +105,19 @@
 
 .header {
     position: fixed;
-    top: 38px;
+    top: 0;
+    padding-top: 38px;
     left: 0;
     width: 100%;
+
+    &.scrolled {
+        padding-top: 0;
+        background: var(--black);
+
+        .btn {
+            padding: 10px 30px;
+        }
+    }
 
     &__logo {
         width: 332px;
@@ -160,7 +174,7 @@
                 list-style: none;
                 opacity: 0;
                 visibility: hidden;
-                backdrop-filter: blur(5px);
+                backdrop-filter: blur(50px);
 
                 &>.menu-item {
                     &>a {
@@ -224,6 +238,12 @@ h1,
     text-align: center;
 }
 
+p {
+    font-weight: 400;
+    font-size: 18px;
+    line-height: 140%;
+}
+
 .btn {
     display: inline-block;
     padding: 24px 30px;
@@ -254,7 +274,7 @@ h1,
         border: none;
         text-align: center;
         cursor: pointer;
-        
+
         &::before {
             content: '';
             position: absolute;
@@ -274,6 +294,130 @@ h1,
             background: url(../images/arrow-2.svg) center / 18px 18px no-repeat;
             border-radius: 50%;
             transition: var(--transition);
+        }
+    }
+}
+
+.footer {
+    background: url(../images/footer-bg.avif) center bottom / cover no-repeat;
+
+    .container {
+        display: grid;
+        gap: 43px;
+        padding-top: 150px;
+        padding-bottom: 85px;
+    }
+
+    &__container {
+        display: grid;
+        grid-template-columns: 480px 1fr;
+        column-gap: 270px;
+        row-gap: 40px;
+        margin-top: 150px;
+    }
+
+    &__banner {
+        text-align: center;
+
+        h2 {
+            margin-bottom: 16px;
+        }
+    }
+
+    &__logo {
+        display: block;
+        width: 480px;
+        height: 83px;
+        margin-bottom: 16px;
+        background: url(../images/footer-logo.svg) center / contain no-repeat;
+    }
+
+    &__contacts {
+        grid-row: 2;
+    }
+
+    &__list {
+        display: flex;
+        gap: 20px;
+        align-items: center;
+        justify-content: space-between;
+
+        a {
+            text-decoration: none;
+        }
+    }
+
+    &__contacts {
+        display: flex;
+        gap: 10px;
+        flex-direction: column;
+        align-items: start;
+    }
+
+    &__contact {
+        display: grid;
+        grid-template-columns: 30px 1fr;
+        gap: 20px;
+        align-items: center;
+        text-decoration: none;
+
+        &::before {
+            content: '';
+            display: block;
+            width: 30px;
+            height: 30px;
+        }
+    }
+
+    &__tel {
+        &::before {
+            background: url(../images/footer-tel.svg) center / contain no-repeat;
+        }
+    }
+
+    &__mail {
+        &::before {
+            background: url(../images/footer-mail.svg) center / contain no-repeat;
+        }
+    }
+
+    &__address {
+        &::before {
+            background: url(../images/footer-address.svg) center / contain no-repeat;
+        }
+    }
+
+    .menu {
+        display: grid;
+        gap: 23px;
+        width: 100%;
+        grid-template-columns: repeat(4, 1fr);
+        list-style: none;
+
+        &>.menu-item {
+            &>a {
+                font-weight: 500;
+                font-size: 18px;
+                line-height: 140%;
+                text-decoration: none;
+            }
+
+            &>.sub-menu {
+                margin-top: 10px;
+                display: flex;
+                gap: 7px;
+                flex-direction: column;
+                list-style: none;
+
+                &>.menu-item {
+                    &>a {
+                        font-weight: 400;
+                        font-size: 16px;
+                        line-height: 140%;
+                        text-decoration: none;
+                    }
+                }
+            }
         }
     }
 }

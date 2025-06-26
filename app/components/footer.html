@@ -1,6 +1,37 @@
 <footer class="footer">
     <div class="container">
-        @@include('menu.html')
+        <section class="footer__banner">
+            <h2>@@title</h2>
+            <p>@@info</p>
+            <a href="##" class="btn-gold">@@link</a>
+        </section>
+
+        <div class="footer__container">
+            <div class="footer__info">
+                <a href="/" class="footer__logo"></a>
+                <p>©2025 Quantumlatamfx. All rights reserved</p>
+            </div>
+
+            <div class="footer__contacts">
+                <a href="tel:+7 909 12 45 411" class="footer__contact footer__tel">+7 909 12 45 411</a>
+
+                <a href="mailto:info@kortex.com" class="footer__contact footer__mail">info@kortex.com</a>
+
+                <address class="footer__contact footer__address">Cannon Green, 27 Bush Lane, London EC4R 0AA, United Kingdom</address>
+            </div>
+
+            @@include('menu.html')
+
+            <p class="footer__risk">Risk Notice: Investing in high risk groups (Forex) and CFD trading are high risk speculative operations that are not suitable for every investor. You can suffer both partial and total losses of the invested funds, so we advise you not to invest capital that you cannot risk. You should be aware of the high risk associated with the use of leverage. We strongly recommend that you carefully read the terms and conditions of our company before using our services.</p>
+        </div>
+
+        <div class="footer__list">
+            <a href="##">AML Policy</a>
+            <a href="##">KYC Policy</a>
+            <a href="##">Customer Agreement</a>
+            <a href="##">Refund Policy</a>
+            <a href="##">Risk Notice</a>
+        </div>
     </div>
 </footer>
 
