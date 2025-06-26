@@ -43,6 +43,15 @@ body {
     background: var(--black);
 }
 
+section {
+    margin-top: 150px;
+    margin-bottom: 150px;
+
+    &:first-child {
+        margin-top: 0;
+    }
+}
+
 .upButton {
     z-index: 1000;
     position: fixed;
@@ -104,6 +113,7 @@ body {
 }
 
 .header {
+    z-index: 100;
     position: fixed;
     top: 0;
     padding-top: 38px;
@@ -238,6 +248,15 @@ h1,
     text-align: center;
 }
 
+h2,
+.h2 {
+    margin-bottom: 16px;
+    font-weight: 500;
+    font-size: 42px;
+    line-height: 120%;
+    text-align: center;
+}
+
 p {
     font-weight: 400;
     font-size: 18px;
@@ -299,7 +318,18 @@ p {
 }
 
 .footer {
+    position: relative;
     background: url(../images/footer-bg.avif) center bottom / cover no-repeat;
+
+    &::before {
+        content: '';
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100%;
+        height: 200px;
+        background: linear-gradient(0deg, rgba(42, 123, 155, 0) 0%, rgba(17, 17, 17, 1) 100%);
+    }
 
     .container {
         display: grid;
@@ -313,10 +343,11 @@ p {
         grid-template-columns: 480px 1fr;
         column-gap: 270px;
         row-gap: 40px;
-        margin-top: 150px;
     }
 
     &__banner {
+        position: relative;
+        margin-bottom: calc(150px - 43px);
         text-align: center;
 
         h2 {
@@ -417,6 +448,45 @@ p {
                         text-decoration: none;
                     }
                 }
+            }
+        }
+    }
+}
+
+.main-trust {
+    margin-bottom: 0;
+
+    h2 {
+        margin-bottom: 48px;
+    }
+
+    &__swiper {
+        .swiper-slide {
+            min-height: 230px;
+            padding: 32px 16px;
+            display: flex;
+            flex-direction: column;
+            justify-content: end;
+            border-radius: 10px;
+
+            &--1 {
+                background: url(../images/main-trust-slide-1.avif) center / cover no-repeat;
+            }
+
+            &--2 {
+                background: url(../images/main-trust-slide-2.avif) center / cover no-repeat;
+            }
+
+            &--3 {
+                background: url(../images/main-trust-slide-3.avif) center / cover no-repeat;
+            }
+
+            &--4 {
+                background: url(../images/main-trust-slide-4.avif) center / cover no-repeat;
+            }
+
+            &--5 {
+                background: url(../images/main-trust-slide-5.avif) center / cover no-repeat;
             }
         }
     }

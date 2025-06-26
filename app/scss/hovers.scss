@@ -76,5 +76,13 @@
                 color: var(--gold);
             }
         }
+
+        &__list {
+            a {
+                &:hover {
+                    color: var(--gold);
+                }
+            }
+        }
     }
 }
