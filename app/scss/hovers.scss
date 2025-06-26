@@ -1,0 +1,39 @@
+@media (min-width: 1200px) {
+    .header {
+        .menu {
+            &>.menu-item {
+                &:hover {
+                    &>.sub-menu {
+                        opacity: 1;
+                        visibility: visible;
+                    }
+                }
+
+                &>.sub-menu {
+                    &>.menu-item {
+                        &>a {
+                            &:hover {
+                                color: var(--gold);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+
+    .btn {
+        &:hover {
+            background: var(--brown);
+            color: var(--white);
+        }
+
+        &-gold {
+            &:hover {
+                &::after {
+                    transform: rotate(45deg);
+                }
+            }
+        }
+    }
+}
