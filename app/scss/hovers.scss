@@ -85,4 +85,30 @@
             }
         }
     }
+
+    .main-help {
+        &__item {
+            &:hover {
+                h3 {
+                    color: var(--brown);
+                }
+
+                p {
+                    color: var(--brown);
+                }
+
+                &::before {
+                    opacity: 1;
+                }
+
+                svg {
+                    left: -10px;
+
+                    path {
+                        fill: var(--brown);
+                    }
+                }
+            }
+        }
+    }
 }
