@@ -39,8 +39,10 @@
 
         &-gold {
             &:hover {
-                &::after {
-                    transform: rotate(45deg);
+                .btn-gold__arrow {
+                    &::before {
+                        transform: rotate(45deg);
+                    }
                 }
             }
         }

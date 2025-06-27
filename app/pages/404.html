@@ -1,14 +1,13 @@
 @@include('../components/header.html', {"title": "Страница не найдена"})
 
 <main>
-    <section class="error-hero">
-        <div class="container">
-            <h1>Ошибка 404</h1>
-            <p>Данная страница не существует. Пожалуйста, начните с главной</p>
-
-            <a href="/" class="btn">На главную</a>
-        </div>
-    </section>
+    <h1 class="error-title">Error 404</h1>
 </main>
 
-@@include('../components/footer.html')
+@@include('../components/footer.html', {
+"class": "footer footer--error",
+"title": "Error 404",
+"info": "This page does not exist. Please start on the home page",
+"href": "/",
+"link": "Go to home page"
+})

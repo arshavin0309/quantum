@@ -43,12 +43,34 @@ body {
     background: var(--black);
 }
 
-section {
-    margin-top: 150px;
-    margin-bottom: 150px;
+main {
+    &>section {
+        position: relative;
+        z-index: 1;
+        padding-top: 75px;
+        padding-bottom: 75px;
+        background: var(--black);
 
-    &:first-child {
-        margin-top: 0;
+        &:first-child {
+            position: fixed;
+            z-index: -1;
+        }
+
+        &:nth-child(2) {
+            margin-top: 800px;
+            padding-top: 150px;
+
+            &::after {
+                z-index: 2;
+                position: absolute;
+                content: '';
+                top: -50px;
+                left: 0;
+                width: 100%;
+                height: 50px;
+                background: linear-gradient(180deg, rgba(17, 17, 17, 0) 0%, rgba(17, 17, 17, 1) 100%);
+            }
+        }
     }
 }
 
@@ -89,6 +111,7 @@ section {
     padding: 25px;
     border-radius: 5px;
     color: var(--white);
+    box-shadow: 0px 0px 12px 4px rgba(0, 0, 0, 0.2);
 
     p {
         font-size: 16px;
@@ -106,6 +129,7 @@ section {
 }
 
 .container {
+    position: relative;
     max-width: calc(1480px + 60px);
     margin: auto;
     padding-left: 30px;
@@ -154,7 +178,8 @@ section {
     }
 
     .menu {
-        display: flex;
+        // display: flex;
+        display: none;
         gap: 40px;
         align-items: center;
         list-style: none;
@@ -225,9 +250,13 @@ section {
 }
 
 .main-hero {
-    position: relative;
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 800px;
     background: url(../images/main-hero.avif) center / cover no-repeat;
-    overflow: clip;
+    padding: 0;
 
     &::before {
         content: '';
@@ -238,17 +267,6 @@ section {
         animation: glow 2s ease-in-out infinite alternate;
         z-index: 1;
         mix-blend-mode: screen;
-    }
-
-    &::after {
-        z-index: 2;
-        position: absolute;
-        content: '';
-        bottom: 0;
-        left: 0;
-        width: 100%;
-        height: 200px;
-        background: linear-gradient(180deg, rgba(17, 17, 17, 0) 0%, rgba(17, 17, 17, 1) 100%);
     }
 
     .container {
@@ -327,8 +345,24 @@ p {
         border: none;
         text-align: center;
         cursor: pointer;
+        overflow: clip;
 
         &::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -75%;
+            width: 50%;
+            height: 100%;
+            background: linear-gradient(120deg,
+                    rgba(255, 255, 255, 0.1) 0%,
+                    rgba(255, 255, 255, 0.4) 50%,
+                    rgba(255, 255, 255, 0.1) 100%);
+            transform: skewX(-25deg);
+            animation: shine 2.5s infinite;
+        }
+
+        &__arrow {
             content: '';
             position: absolute;
             height: calc(100% - 4px - 4px);
@@ -336,17 +370,15 @@ p {
             aspect-ratio: 1/1;
             background: var(--gold-button);
             border-radius: 50%;
-        }
-
-        &::after {
-            content: '';
-            position: absolute;
-            height: calc(100% - 4px - 4px);
-            inset: 4px 4px 4px auto;
-            aspect-ratio: 1/1;
-            background: url(../images/arrow-2.svg) center / 18px 18px no-repeat;
-            border-radius: 50%;
             transition: var(--transition);
+
+            &::before {
+                position: absolute;
+                content: '';
+                inset: 0;
+                background: url(../images/arrow-2.svg) center / 18px 18px no-repeat;
+                transition: var(--transition);
+            }
         }
     }
 }
@@ -354,8 +386,10 @@ p {
 .footer {
     position: relative;
     background: url(../images/footer-bg.avif) center bottom / cover no-repeat;
+    overflow: clip;
 
-    &::before {
+    &::after {
+        z-index: 1;
         content: '';
         position: absolute;
         top: 0;
@@ -366,6 +400,8 @@ p {
     }
 
     .container {
+        z-index: 2;
+        position: relative;
         display: grid;
         gap: 43px;
         padding-top: 150px;
@@ -383,6 +419,7 @@ p {
         position: relative;
         margin-bottom: calc(150px - 43px);
         text-align: center;
+        background: none;
 
         h2 {
             margin-bottom: 16px;
@@ -453,7 +490,8 @@ p {
     }
 
     .menu {
-        display: grid;
+        // display: grid;
+        display: none;
         gap: 23px;
         width: 100%;
         grid-template-columns: repeat(4, 1fr);
@@ -485,6 +523,21 @@ p {
             }
         }
     }
+
+    &--error {
+        .container {
+            min-height: 100vh;
+        }
+
+        .footer__banner {
+            h2 {
+                font-weight: 500;
+                font-size: 128px;
+                line-height: 120%;
+                text-transform: uppercase;
+            }
+        }
+    }
 }
 
 .main-trading {
@@ -508,6 +561,7 @@ p {
         padding: 48px 24px;
         background: var(--grey-cards);
         border-radius: 10px;
+        overflow: clip;
     }
 
     &__funds {
@@ -524,7 +578,7 @@ p {
         grid-column: 2;
         grid-row: 1/4;
         color: var(--brown);
-        background: var(--gold-button);
+        background: url(../images/main-trading-assets.avif) center bottom / 364px no-repeat;
 
         &::before {
             position: absolute;
@@ -539,13 +593,13 @@ p {
         }
 
         &::after {
+            z-index: -1;
             position: absolute;
             content: '';
-            left: 0;
-            bottom: 0;
+            inset: 0;
             width: 100%;
-            height: 292px;
-            background: url(../images/main-trading-assets.avif) center bottom / contain no-repeat;
+            height: 100%;
+            background: var(--gold-button);
         }
     }
 
@@ -622,7 +676,7 @@ p {
     fill: none;
     stroke: #ffcc66;
     stroke-linecap: round;
-    stroke-dasharray: 289; // 2 * π * 46 ≈ 289
+    stroke-dasharray: 289;
     stroke-dashoffset: 289;
     transition: stroke-dashoffset 0.2s ease-out;
 }
@@ -899,9 +953,25 @@ p {
 
 .main-banner {
     &__container {
+        position: relative;
         padding: 48px 44% 91px 32px;
-        background: var(--gold) url(../images/main-banner.avif) right 62px center / 30% no-repeat;
+        background: url(../images/main-banner.avif) right 62px center / 30% no-repeat;
         border-radius: 10px;
+        overflow: clip;
+
+        &::before {
+            z-index: -1;
+            content: '';
+            position: absolute;
+            inset: 0;
+            width: 100%;
+            height: 100%;
+            background: var(--gold-button);
+
+
+            background-size: 200% 200%;
+            animation: gradient 3s ease-in-out infinite;
+        }
     }
 
     h2 {
@@ -916,6 +986,12 @@ p {
     .btn {
         margin-top: 36px;
     }
+}
+
+.error-title {
+    width: 0;
+    height: 0;
+    visibility: hidden;
 }
 
 @import '../scss/hovers';
