@@ -1,3 +1,162 @@
 @media (max-width: 768px) {
-    
+    main {
+        &>section {
+            padding-top: 40px;
+            padding-bottom: 40px;
+
+            &:nth-child(2) {
+                margin-top: 550px;
+                padding-top: 80px;
+            }
+        }
+    }
+
+    .main-hero {
+        height: 550px;
+
+        .container {
+            padding-top: 166px;
+            padding-bottom: 30px;
+        }
+    }
+
+    .main-trading {
+        &__list {
+            margin-top: 30px;
+            grid-template-columns: 1fr;
+        }
+
+        &__item {
+            min-height: initial;
+            grid-row: initial;
+            grid-column: initial;
+            padding: 24px 16px;
+        }
+
+        &__funds {
+            padding-bottom: 162px;
+            background-position: right 12px bottom 24px;
+        }
+
+        &__assets {
+            padding-bottom: 232px;
+            background: url(../images/main-trading-assets-mobile.avif) center bottom / 195px auto no-repeat;
+        }
+
+        &__order {
+            padding-bottom: 184px;
+            background-position: right 10px bottom 24px;
+            background-size: 178px 136px;
+        }
+    }
+
+    .main-help {
+        h2 {
+            margin-bottom: 30px;
+        }
+
+        &__list {
+            grid-template-columns: 1fr;
+        }
+
+        &__item {
+            padding: 24px 16px;
+        }
+
+        &__image {
+            height: 276px;
+        }
+    }
+
+    .main-choose {
+        &__item {
+            min-height: 539px;
+            padding: 24px 16px;
+            flex-direction: column;
+            gap: 32px;
+
+            h3 {
+                margin-bottom: 24px;
+            }
+
+            .btn-gold {
+                margin: 0;
+            }
+        }
+
+        &__banner {
+            padding: 24px 16px;
+            flex-direction: column;
+            align-items: start;
+            gap: 32px;
+        }
+
+        &__box {
+            width: 100%;
+        }
+    }
+
+    .main-priority {
+        &__list {
+            grid-template-columns: 1fr;
+        }
+
+        &__item {
+            padding: 24px 16px;
+        }
+
+        &__image {
+            background-position: center;
+        }
+    }
+
+    .main-banner {
+        &__container {
+            padding: 24px 16px;
+            padding-bottom: 292px;
+            background-position: center bottom 17px;
+            background-size: 329px 250px;
+        }
+
+        h2 {
+            margin-bottom: 30px;
+        }
+    }
+
+    .footer {
+        &__container {
+            gap: 30px;
+        }
+
+        .container {
+            padding-top: 80px;
+            gap: 30px;
+        }
+
+        &__logo {
+            width: 361px;
+            height: 62px;
+        }
+
+        .menu {
+            gap: 23px;
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        &__list {
+            flex-direction: column;
+            gap: 7px;
+            align-items: start;
+        }
+
+        &__banner {
+            margin-bottom: 50px;
+        }
+
+        &--error {
+            .container {
+                padding-top: 166px;
+            }
+        }
+    }
 }

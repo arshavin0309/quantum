@@ -1,10 +1,11 @@
 // мобильное меню
 
 $(function () {
+    const body = $('html');
     const menuItems = $('.header .menu > .menu-item');
     const subMenus = $('.header .menu > .menu-item > .sub-menu');
     const burger = $('.header__burger');
-    const headerMenu = $('.header__content');
+    const headerMenu = $('.header__box');
     const headerBox = $('.header');
     const upButton = $('.upButton');
 
@@ -19,6 +20,7 @@ $(function () {
         burger.toggleClass('active');
         headerBox.toggleClass('active');
         headerMenu.toggleClass('active');
+        body.toggleClass('active');
 
         if (!burger.hasClass('active')) {
             closeAllSubMenus();
@@ -34,6 +36,7 @@ $(function () {
             burger.removeClass('active');
             headerBox.removeClass('active');
             headerMenu.removeClass('active');
+            body.removeClass('active');
             closeAllSubMenus();
         });
 
@@ -69,6 +72,7 @@ $(function () {
         burger.removeClass('active');
         headerBox.removeClass('active');
         headerMenu.removeClass('active');
+        body.removeClass('active');
         subMenus.removeAttr('style').removeClass('active');
         menuItems.removeClass('active');
 

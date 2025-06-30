@@ -13,4 +13,18 @@
             margin-right: -15px;
         }
     }
+
+    .footer {
+        .menu {
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .btn {
+        width: 100%;
+
+        &-gold {
+            width: 100%;
+        }
+    }
 }

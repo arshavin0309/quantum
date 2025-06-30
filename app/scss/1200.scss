@@ -1,3 +1,273 @@
 @media (max-width: 1200px) {
-    
+    .header {
+        height: 86px;
+        padding: 0;
+
+        &.active {
+            background: var(--black);
+        }
+
+        &.scrolled {
+            .btn {
+                padding: 20px 30px;
+            }
+        }
+
+        .container {
+            padding-top: 20px;
+            padding-bottom: 20px;
+            justify-content: space-between;
+        }
+
+        &__logo {
+            width: 267px;
+            height: 46px;
+        }
+
+        &__box {
+            position: fixed;
+            top: 85px;
+            right: -100%;
+            width: 100%;
+            max-width: 430px;
+            height: calc(100% - 86px);
+            flex-direction: column;
+            align-items: start;
+            background: var(--black);
+            gap: 30px;
+            overflow-y: auto;
+            padding-bottom: 100px;
+
+            &.active {
+                right: 0;
+            }
+        }
+
+        &__nav {
+            flex-direction: column;
+            align-items: start;
+            gap: 0;
+        }
+
+        .menu {
+            width: 100%;
+            flex-direction: column;
+            gap: 1px;
+            background: var(--brown);
+            border-top: 1px solid var(--brown);
+            border-bottom: 1px solid var(--brown);
+
+            &>.menu-item {
+                width: 100%;
+
+                &>a {
+                    padding: 20px 20px;
+                    background: var(--black);
+                }
+
+                &>.sub-menu {
+                    position: inherit;
+                    opacity: initial;
+                    visibility: initial;
+                    inset: initial;
+                    transform: initial;
+                    background: var(--brown);
+                    border-radius: initial;
+                    border: initial;
+                    transition: none;
+                    padding: 0;
+                    gap: 0;
+                    backdrop-filter: initial;
+
+                    &>.menu-item {
+                        &>a {
+                            padding: 20px 30px;
+                            text-align: initial;
+                        }
+                    }
+                }
+            }
+
+            &.header__lang {
+                order: 1;
+                border-top: none;
+
+                &>.menu-item {
+                    &>a {
+                        padding: 20px 20px;
+                        background: var(--black);
+                        border-radius: initial;
+                        border: initial;
+                    }
+
+                    &:after {
+                        display: none;
+                    }
+                }
+            }
+        }
+
+        .btn {
+            width: calc(100% - 20px);
+            margin: 0px 10px;
+            padding: 20px 30px;
+        }
+
+        &__burger {
+            display: block;
+        }
+    }
+
+    .container {
+        padding-left: 16px;
+        padding-right: 16px;
+    }
+
+    .main-trading {
+        &__list {
+            grid-template-columns: 1fr 1fr;
+            grid-template-rows: initial;
+            padding-top: 0;
+        }
+
+        &__item {
+            grid-row: initial;
+            grid-column: initial;
+        }
+
+        &__funds {
+            min-height: 250px;
+            padding-bottom: 160px;
+            background-size: 142px 114px;
+        }
+
+        &__assets {
+            min-height: 250px;
+            grid-row: 2;
+            grid-column: span 2;
+            padding-right: 40%;
+            background-position: right 24px top 48px;
+            background-size: auto calc(100% - 48px);
+
+            &::before {
+                display: none;
+            }
+        }
+
+        &__order {
+            min-height: 250px;
+            padding-bottom: 160px;
+            grid-row: 1;
+            grid-column: 2;
+        }
+    }
+
+    .scroll-indicator {
+        display: none;
+    }
+
+    .main-help {
+        &__list {
+            grid-template-columns: repeat(2, 1fr);
+        }
+
+        &__image {
+            min-height: initial;
+            order: 1;
+        }
+
+        &__item {
+            padding: 48px 24px;
+            align-items: start;
+
+            &::before {
+                display: none;
+            }
+
+            h3 {
+                &::before {
+                    content: '';
+                    display: block;
+                    width: 70px;
+                    height: 58px;
+                    margin-bottom: 24px;
+                }
+            }
+
+            svg {
+                position: initial;
+                display: none;
+            }
+
+            &--1 {
+                h3 {
+                    &::before {
+                        background: url(../images/01.svg) center / contain no-repeat;
+                    }
+                }
+            }
+
+            &--2 {
+                h3 {
+                    &::before {
+                        background: url(../images/02.svg) center / contain no-repeat;
+                    }
+                }
+            }
+
+            &--3 {
+                h3 {
+                    &::before {
+                        background: url(../images/03.svg) center / contain no-repeat;
+                    }
+                }
+            }
+        }
+    }
+
+    .main-choose {
+        &__list {
+            grid-template-columns: 1fr;
+        }
+
+        &__item {
+            flex-direction: row;
+        }
+
+        &__box {
+            flex-direction: column;
+            align-items: start;
+            gap: 24px;
+        }
+    }
+
+    .main-priority {
+        &__container {
+            grid-template-columns: 1fr;
+        }
+
+        &__box {
+            margin: 0;
+        }
+
+        &__image {
+            order: 1;
+            min-height: 350px;
+            background-position: left top -150px;
+        }
+    }
+
+    .main-trust {
+        &__swiper {
+            .swiper-slide {
+                width: 267px;
+            }
+        }
+    }
+
+    .footer {
+        &__container {
+            grid-template-columns: 1fr;
+        }
+    }
 }
