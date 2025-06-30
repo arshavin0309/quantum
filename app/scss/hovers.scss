@@ -113,4 +113,45 @@
             }
         }
     }
+
+    .contacts-form {
+
+        &__tel,
+        &__mail {
+            &:hover {
+                background: var(--gold);
+
+                h3,
+                p {
+                    color: var(--brown);
+                }
+
+                svg {
+                    path {
+                        fill: var(--brown);
+                    }
+                }
+            }
+        }
+
+        form {
+            p {
+                span {
+                    span {
+                        span {
+                            label {
+                                span {
+                                    a {
+                                        &:hover {
+                                            border-color: var(--gold);
+                                        }
+                                    }
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
 }

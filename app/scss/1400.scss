@@ -1,3 +1,18 @@
 @media (max-width: 1400px) {
-    
+    .platform-platforms {
+        &__container {
+            grid-template-columns: 1fr;
+        }
+
+        &__item {
+            gap: 40px;
+            flex-direction: row;
+
+            .btn-gold {
+                margin-top: 0;
+            }
+
+            background-size: auto 60%;
+        }
+    }
 }

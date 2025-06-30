@@ -1,3 +1,15 @@
 @media (max-width: 1024px) {
-    
+    .contacts-form {
+        &__container {
+            gap: 40px;
+        }
+
+        &__list {
+            grid-template-columns: 1fr;
+        }
+
+        &__address {
+            grid-column: initial;
+        }
+    }
 }

@@ -159,4 +159,46 @@
             }
         }
     }
+
+    .platform-platforms {
+        &__item {
+            padding: 24px 16px;
+            flex-direction: column;
+            gap: 0;
+
+            h2 {
+                margin-bottom: 24px;
+            }
+
+            .btn-gold {
+                margin-top: 36px;
+            }
+        }
+
+        &__box {
+            max-width: 100%;
+        }
+    }
+
+    .contacts-form {
+        &__container {
+            padding: 24px 16px;
+            grid-template-columns: 1fr;
+            gap: 60px;
+            margin-left: -16px;
+            margin-right: -16px;
+            border-radius: initial;
+        }
+
+        h2 {
+            margin-bottom: 30px;
+        }
+
+        &__item {
+            svg {
+                max-width: 17px;
+                max-height: 17px;
+            }
+        }
+    }
 }

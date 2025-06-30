@@ -67,7 +67,7 @@ main {
 
         &:first-child {
             position: fixed;
-            z-index: -1;
+            // z-index: -1;
         }
 
         &:nth-child(2) {
@@ -414,6 +414,7 @@ p {
 }
 
 .footer {
+    z-index: 1;
     position: relative;
     background: url(../images/footer-bg.avif) center bottom / cover no-repeat;
     overflow: clip;
@@ -632,6 +633,8 @@ p {
             width: 100%;
             height: 100%;
             background: var(--gold-button);
+            background-size: 200% 200%;
+            animation: gradient 3s ease-in-out infinite;
         }
     }
 
@@ -647,8 +650,6 @@ p {
 }
 
 .main-trust {
-    padding-bottom: 0;
-
     h2 {
         margin-bottom: 48px;
     }
@@ -1024,6 +1025,185 @@ p {
     width: 0;
     height: 0;
     visibility: hidden;
+}
+
+.platform-platforms {
+    &__container {
+        display: grid;
+        gap: 20px;
+        grid-template-columns: repeat(2, 1fr);
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        align-items: start;
+        padding: 48px 32px;
+        border-radius: 10px;
+
+        h2 {
+            margin-bottom: 20px;
+            text-align: initial;
+        }
+
+        p {
+            margin-bottom: 16px;
+        }
+
+        ul {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            list-style: none;
+
+            li {
+                display: grid;
+                grid-template-columns: 10px 1fr;
+                gap: 10px;
+                font-weight: 400;
+                font-size: clamp(16px, 1.5vw, 18px);
+                line-height: 140%;
+
+                &::before {
+                    content: '';
+                    display: block;
+                    width: 10px;
+                    height: 10px;
+                    margin-top: 7px;
+                    border-radius: 50%;
+                    background: #919191;
+                }
+            }
+        }
+    }
+
+    &__tr {
+        background: var(--grey-cards) url(../images/platform-tr.avif) right bottom / 384px 336px no-repeat;
+    }
+
+    &__wt {
+        background: var(--grey-cards) url(../images/platform-wt.avif) right bottom / 369px 334px no-repeat;
+    }
+
+    &__box {
+        max-width: 458px;
+    }
+}
+
+.contacts-form {
+    &__container {
+        display: grid;
+        grid-template-columns: 1fr 573px;
+        gap: 177px;
+        padding: 48px 32px;
+        background: var(--grey-cards);
+        border-radius: 10px;
+    }
+
+    h2 {
+        margin-bottom: 48px;
+        text-align: left;
+    }
+
+    &__list {
+        display: grid;
+        grid-template-columns: repeat(2, 1fr);
+        row-gap: 16px;
+        column-gap: 20px;
+    }
+
+    &__item {
+        display: flex;
+        flex-direction: column;
+        gap: 42px;
+        padding: 24px 16px;
+        background: var(--black);
+        border-radius: 10px;
+        text-decoration: none;
+    }
+
+    &__title {
+        display: flex;
+        justify-content: space-between;
+        align-items: start;
+    }
+
+    &__value {
+        color: var(--gold)
+    }
+
+    &__address {
+        grid-column: span 2;
+        font-weight: 400;
+        font-size: clamp(16px, 1.5vw, 18px);
+        line-height: 140%;
+        font-style: initial;
+    }
+
+    &__heading {
+        margin-bottom: 10px;
+    }
+
+    form {
+
+        input[type='name'],
+        input[type='email'] {
+            width: 100%;
+            height: 60px;
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            background: var(--black);
+            resize: none;
+            border: none;
+            outline: none;
+        }
+
+        input[type='checkbox'] {
+            width: 30px;
+            height: 30px;
+        }
+
+        textarea {
+            width: 100%;
+            height: 115px;
+            margin-bottom: 20px;
+            padding: 20px;
+            border-radius: 10px;
+            background: var(--black);
+            resize: none;
+            border: none;
+            outline: none;
+        }
+
+        p {
+            span {
+                span {
+                    span {
+                        label {
+                            display: flex;
+                            align-items: center;
+                            gap: 20px;
+
+                            span {
+                                a {
+                                    color: var(--gold);
+                                    text-decoration: none;
+                                    border-bottom: 1px solid transparent;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+
+        .btn {
+            margin-top: 36px;
+            padding: 24px 80px;
+        }
+    }
 }
 
 @import '../scss/hovers';

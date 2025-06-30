@@ -1,3 +1,13 @@
 @media (max-width: 600px) {
-    
+    .platform-platforms {
+        &__tr {
+            padding-bottom: 262px;
+            background: var(--grey-cards) url(../images/platform-tr-mobile.avif) center bottom / 322px 223px no-repeat;
+        }
+
+        &__wt {
+            padding-bottom: 218px;
+            background: var(--grey-cards) url(../images/platform-wt-mobile.avif) center bottom / 270px 158px no-repeat;
+        }
+    }
 }

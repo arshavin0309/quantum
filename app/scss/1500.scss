@@ -5,6 +5,13 @@
         }
     }
 
+    .contacts-form {
+        &__container {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 60px;
+        }
+    }
+
     .footer {
         &__container {
             column-gap: 80px;
