@@ -4,15 +4,20 @@
             padding-top: 40px;
             padding-bottom: 40px;
 
+            &:first-child {
+                height: 400px;
+                padding-top: 166px;
+            }
+
             &:nth-child(2) {
-                margin-top: 550px;
+                margin-top: 400px;
                 padding-top: 80px;
             }
         }
     }
 
     .main-hero {
-        height: 550px;
+        height: 550px !important;
 
         .container {
             padding-top: 166px;
@@ -21,6 +26,8 @@
     }
 
     .main-trading {
+        margin-top: 550px !important;
+
         &__list {
             margin-top: 30px;
             grid-template-columns: 1fr;
