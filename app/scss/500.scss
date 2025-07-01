@@ -28,4 +28,16 @@
             padding: 23px;
         }
     }
+
+    .contacts-form {
+        &__submit {
+            width: 100%;
+        }
+    }
+
+    input {
+        &[type='submit'] {
+            width: 100%;
+        }
+    }
 }
