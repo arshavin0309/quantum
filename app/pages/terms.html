@@ -8,9 +8,45 @@
         </div>
     </section>
 
-    <section>
+    <section class="terms-specification">
         <div class="container">
             <h2>Contract specification</h2>
+
+            <div class="terms-specification__list">
+                <div class="terms-specification__item terms-specification__item--1">
+                    <h3>Currencies</h3>
+                    <p>We have handpicked for you the world’s currencies with the highest trading volumes and impressive liquidity.</p>
+                </div>
+
+                <div class="terms-specification__item terms-specification__item--2">
+                    <h3>Indices</h3>
+                    <p>Stock indices (often called market indices) are indicators of stock markets. They can consist of shares from companies in specific market sectors (for example, the NASDAQ), or from the largest corporations in a country. Among the latter are the American S&P 500, the British FTSE 100, and the Japanese Nikkei 225.</p>
+                </div>
+
+                <div class="terms-specification__item terms-specification__item--3">
+                    <h3>Commodities</h3>
+                    <p>Investing in commodities traded via contracts is a reliable way to mitigate risk, even amid inflation or economic uncertainty. These contracts protect both buyers and sellers from significant losses due to price fluctuations.</p>
+                </div>
+
+                <div class="terms-specification__item terms-specification__item--4">
+                    <h3>Stocks</h3>
+                    <p>Investing in shares of the largest companies in the USA, Russia, the UK, France, and Germany could be a wise financial decision.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    @@include('../components/choose.html')
+
+    <section class="terms-ideas">
+        <div class="container">
+            <h2>Trading ideas, forecasts, hypotheses, analysis results from traders and analysts from all over the world</h2>
+
+            <div class="terms-ideas__container">
+                <script src="https://api.marketcheese.com/widgets/markets/widget.js" data-config='{"language":"en","orientation":"auto","defaultPeriod":"week","adaptive":true,"groups":[{"name":"Металлы","symbols":"97,98,99,100,104"}]}'></script>
+
+                <script src="https://api.marketcheese.com/widgets/forecasts/widget.js" data-config='{"language":"en","orientation":"horizontal","maxRows":2,"segments":"14,4,16,8,5,7,15"}'></script>
+            </div>
         </div>
     </section>
 </main>

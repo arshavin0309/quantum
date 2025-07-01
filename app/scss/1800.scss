@@ -1,3 +1,11 @@
-@media (max-width: 1800px) {
-    
+@media (max-width: 1920px) {
+    main {
+        &>section {
+            &.main-hero {
+                background-size: 1920px 800px;
+            }
+        }
+    }
 }
+
+@media (max-width: 1800px) {}
