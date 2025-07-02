@@ -1539,6 +1539,7 @@ p {
         background: var(--grey-cards);
         border-radius: 10px;
         text-decoration: none;
+        overflow: hidden;
 
         svg {
             position: absolute;
@@ -1589,6 +1590,7 @@ p {
             padding: 24px;
             background: var(--grey-cards);
             border-radius: 10px;
+            cursor: pointer;
 
             h3 {
                 display: flex;

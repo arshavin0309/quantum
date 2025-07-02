@@ -160,11 +160,14 @@
             &:hover {
                 background: var(--gold);
 
-                h3, p {
+                h3,
+                p {
                     color: var(--brown);
                 }
 
                 svg {
+                    left: -10px;
+
                     path {
                         fill: var(--brown);
                     }
