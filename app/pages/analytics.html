@@ -8,9 +8,59 @@
         </div>
     </section>
 
-    <section>
+    <section class="analytics-calendar">
         <div class="container">
             <h2>Economic Calendar</h2>
+            <p>Trade in financial markets using an economic calendar — utilize various trading tools and strategies</p>
+
+            <script src="https://api.marketcheese.com/widgets/calendar/widget.js" data-config='{"filters":{"countries":"1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19,20,21,22,23,24,25,26,27,81,186,211","segments":"4,14,16"},"language":"en","timezone":"current","upload":"manual","rowCount":10}'></script>
+        </div>
+    </section>
+
+    <section class="analytics-condition">
+        <div class="container">
+            <h2>Market condition</h2>
+            <p>The current state of the financial instrument market provides real-time pricing at specific moments and tracks trends over different time frames</p>
+
+            <script src="https://api.marketcheese.com/widgets/markets/widget.js" data-config='{"language":"en","orientation":"auto","defaultPeriod":"week","adaptive":true,"groups":[{"name":"Символы","symbols":"12,14,18,11,21,23,25,27,28"}]}'></script>
+        </div>
+    </section>
+
+    <section class="analytics-quotes">
+        <div class="container">
+            <h2>Online quotes</h2>
+            <p>Receive financial market quotes with detailed information and charts for analysis</p>
+
+            <script src="https://api.marketcheese.com/widgets/quotes/widget.js" data-config='{"language":"en","lastColumn":"todayIncrement","adaptive":true,"columns":"ask,bid,dayOpening,dayMax,dayMin,todayIncrement,todayIncrementAbs","groups":[{"name":"Символы","symbols":"97,99,100,98,104,129,127,128"}]}'></script>
+        </div>
+    </section>
+
+    <section class="analytics-widgets">
+        <div class="container">
+            <div class="analytics-widgets__container">
+                <div class="analytics-widgets__box">
+                    <h2>Market leaders</h2>
+                    <p>Make fast trading decisions thanks to the performance of market leaders</p>
+
+                    <script src="https://api.marketcheese.com/widgets/leaders/widget.js" data-config='{"filters":{"segments":"14,4,16,8,5,7,15"},"language":"en"}'></script>
+                </div>
+
+                <div class="analytics-widgets__box">
+                    <h2>Important events</h2>
+                    <p>Access major world economic events and real-time market reactions</p>
+
+                    <script src="https://api.marketcheese.com/widgets/notifier/widget.js" data-config='{"language":"en","period":"all","multipleIndicators":true,"adaptive":true,"currencies":"1,2,3,4,5,6,7,8,9,10,11,12,13,14,15,16,17,18,19"}'></script>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <section class="analytics-forecasts">
+        <div class="container">
+            <h2>Market forecasts</h2>
+            <p>Get insights into trading, forecasts, hypotheses, and analysis results from traders and analysts all over the world</p>
+
+            <script src="https://api.marketcheese.com/widgets/forecasts/widget.js" data-config='{"language":"en","orientation":"horizontal","maxRows":2,"segments":"14,4,16,8,5,7,15"}'></script>
         </div>
     </section>
 </main>
