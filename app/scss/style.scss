@@ -1790,6 +1790,119 @@ p {
     }
 }
 
+.currencies-forex {
+    h2 {
+        margin-bottom: 48px;
+    }
+
+    &__list {
+        display: grid;
+        gap: 20px;
+        grid-template-columns: repeat(3, 1fr);
+    }
+
+    &__item {
+        display: flex;
+        align-items: center;
+        padding: 48px 24px;
+        background: var(--grey-cards);
+        border-radius: 10px;
+
+        &:last-of-type {
+            h3 {
+                max-width: 297px;
+            }
+        }
+    }
+
+    &__banner {
+        grid-column: span 2;
+        display: flex;
+        align-items: center;
+        padding: 48px 24px;
+        background: var(--gold) url(../images/currencies-banner.avif) right 24px center / auto 100px no-repeat;
+        border-radius: 10px;
+
+        h3 {
+            max-width: 371px;
+            color: var(--brown);
+        }
+    }
+}
+
+.currencies-market {
+    h2 {
+        margin-bottom: 48px;
+    }
+
+    &__container {
+        display: grid;
+        grid-template-columns: 1fr 800px;
+        gap: 59px;
+        align-items: start;
+    }
+
+    &__content {
+        h3 {
+            margin-bottom: 24px;
+        }
+
+        ul {
+            display: flex;
+            flex-direction: column;
+            gap: 15px;
+            list-style: none;
+
+            &:not(:last-of-type) {
+                margin-bottom: 48px;
+            }
+
+            li {
+                display: grid;
+                grid-template-columns: 10px 1fr;
+                gap: 10px;
+                font-weight: 400;
+                font-size: clamp(16px, 1.5vw, 18px);
+                line-height: 140%;
+
+                &::before {
+                    content: '';
+                    display: block;
+                    width: 10px;
+                    height: 10px;
+                    margin-top: 7px;
+                    border-radius: 50%;
+                    background: #919191;
+                }
+            }
+        }
+    }
+}
+
+.currencies-live {
+    h2 {
+        margin-bottom: 16px;
+
+        &+p {
+            margin-bottom: 48px;
+            text-align: center;
+        }
+    }
+}
+
+.currencies-asked {
+    &__container {
+        display: grid;
+        grid-template-columns: 1fr 730px;
+        gap: 72px;
+        align-items: start;
+
+        img {
+            border-radius: 10px;
+        }
+    }
+}
+
 @import '../scss/hovers';
 @import '../scss/1800';
 @import '../scss/1700';
