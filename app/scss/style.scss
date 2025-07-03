@@ -276,12 +276,13 @@ main {
                 transform: translateX(-50%);
                 padding: 10px 15px;
                 border: 0.5px solid #FFFFFF26;
-                background: #FFFFFF1A;
+                // background: #FFFFFF1A;
+                background: var(--grey-cards);
                 border-radius: 10px;
                 list-style: none;
                 opacity: 0;
                 visibility: hidden;
-                backdrop-filter: blur(50px);
+                // backdrop-filter: blur(50px);
 
                 &>.menu-item {
                     &>a {
@@ -440,7 +441,7 @@ p {
 .footer {
     z-index: 1;
     position: relative;
-    background: url(../images/footer-bg.avif) center bottom / cover no-repeat;
+    background: url(../images/footer-bg.avif) center top / cover no-repeat;
     overflow: hidden;
 
     &::after {
@@ -518,31 +519,6 @@ p {
         align-items: center;
         text-decoration: none;
         font-style: initial;
-
-        &::before {
-            content: '';
-            display: block;
-            width: 30px;
-            height: 30px;
-        }
-    }
-
-    &__tel {
-        &::before {
-            background: url(../images/footer-tel.svg) center / contain no-repeat;
-        }
-    }
-
-    &__mail {
-        &::before {
-            background: url(../images/footer-mail.svg) center / contain no-repeat;
-        }
-    }
-
-    &__address {
-        &::before {
-            background: url(../images/footer-address.svg) center / contain no-repeat;
-        }
     }
 
     .menu {
@@ -1835,7 +1811,8 @@ p {
 
 .currencies-market {
     h2 {
-        margin-bottom: 48px;
+        max-width: 1272px;
+        margin: 0 auto 48px;
     }
 
     &__container {

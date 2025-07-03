@@ -70,12 +70,24 @@
         &__tel {
             &:hover {
                 color: var(--gold);
+
+                svg {
+                    path {
+                        fill: var(--gold);
+                    }
+                }
             }
         }
 
         &__mail {
             &:hover {
                 color: var(--gold);
+
+                svg {
+                    path {
+                        fill: var(--gold);
+                    }
+                }
             }
         }
 
