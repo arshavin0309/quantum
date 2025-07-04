@@ -270,4 +270,12 @@
             grid-template-columns: 1fr;
         }
     }
+
+    main {
+        &>section {
+            &:first-child {
+                background-size: auto 570px;
+            }
+        }
+    }
 }
