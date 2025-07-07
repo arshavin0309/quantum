@@ -15,4 +15,24 @@
             background-size: auto 60%;
         }
     }
+
+    .about-ask {
+        &__banner {
+            padding: 40px 32px;
+
+            h2 {
+                margin-bottom: 0;
+            }
+        }
+
+        &__btns {
+            flex-direction: column;
+            gap: 20px;
+
+            .btn,
+            .btn-gold {
+                width: 100%;
+            }
+        }
+    }
 }

@@ -278,4 +278,61 @@
             }
         }
     }
+
+    .about-work {
+        &__list {
+            grid-template-columns: repeat(3, 1fr);
+            grid-template-rows: initial;
+        }
+
+        &__image {
+            &-1 {
+                grid-column: initial;
+                grid-row: initial;
+            }
+
+            &-2 {
+                grid-column: initial;
+                grid-row: initial;
+            }
+        }
+
+        &__box {
+            grid-column: span 3;
+            grid-row: initial;
+            justify-content: center;
+        }
+    }
+
+    .about-ask {
+        h2 {
+            margin-bottom: 48px;
+        }
+
+        &__ask {
+            margin-left: auto;
+            margin-right: auto;
+
+            &--3 {
+                margin-left: auto;
+            }
+        }
+
+        &__answer {
+            margin-left: auto;
+            margin-right: auto;
+
+            &--1,
+            &--2,
+            &--3 {
+                margin-left: auto;
+            }
+        }
+
+        &__banner {
+            h2 {
+                margin-bottom: 0;
+            }
+        }
+    }
 }

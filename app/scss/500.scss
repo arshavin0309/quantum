@@ -40,4 +40,32 @@
             width: 100%;
         }
     }
+
+    .about-work {
+        &__list {
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+
+        &__image {
+            &-1,
+            &-2 {
+                height: 210px;
+            }
+        }
+
+        &__box {
+            grid-column: initial;
+        }
+
+        .btn-gold {
+            margin-top: 0;
+        }
+    }
+
+    .about-ask {
+        &__btns {
+            width: 100%;
+        }
+    }
 }
