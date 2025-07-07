@@ -279,4 +279,130 @@
             }
         }
     }
+
+    .terms-specification {
+        h2 {
+            margin-bottom: 30px;
+        }
+
+        &__list {
+            grid-template-columns: 1fr;
+            gap: 20px;
+        }
+
+        &__item {
+            min-height: 400px;
+            padding: 24px 16px;
+        }
+    }
+
+    .terms-ideas {
+        h2 {
+            margin-bottom: 30px;
+        }
+
+        &__container {
+            padding: 16px;
+            grid-template-columns: 1fr;
+        }
+    }
+
+    .start-forex {
+        &__container {
+            grid-template-columns: 1fr;
+        }
+
+        h2 {
+            margin-bottom: 30px;
+        }
+    }
+
+    .start-know {
+        h2 {
+            margin-bottom: 30px;
+        }
+    }
+
+    .start-steps {
+        h2 {
+            margin-bottom: 30px;
+        }
+
+        &__container {
+            grid-template-columns: 1fr;
+        }
+
+        img {
+            order: 1;
+            width: 100%;
+        }
+
+        &__list {
+            li {
+                padding: 25px 16px;
+            }
+        }
+    }
+
+    .platform-advantages {
+        &__container {
+            grid-template-columns: 350px 361px;
+        }
+
+        h2 {
+            margin-bottom: 30px;
+        }
+
+        img {
+            max-width: 361px;
+            margin: auto;
+        }
+    }
+
+    .markets-key {
+        h2 {
+            margin-bottom: 30px;
+        }
+
+        &__item {
+            padding: 24px 16px;
+        }
+    }
+
+    .markets-currencies,
+    .markets-indices,
+    .markets-cryptocurrencies {
+        h2 {
+            margin-bottom: 30px;
+        }
+    }
+
+    .markets-commodities,
+    .markets-stocks {
+        h2 {
+            margin-bottom: 30px;
+        }
+    }
+
+    .currencies-forex {
+        h2 {
+            margin-bottom: 30px;
+        }
+
+        &__list {
+            grid-template-columns: 1fr;
+        }
+
+        &__item {
+            min-height: 154px;
+            align-items: start;
+            padding: 24px 16px;
+        }
+
+        &__banner {
+            padding: 24px 16px 132px 16px;
+            grid-column: initial;
+            background-position: left 14px bottom 24px;
+        }
+    }
 }

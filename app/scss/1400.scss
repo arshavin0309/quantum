@@ -35,4 +35,23 @@
             }
         }
     }
+
+    .start-forex {
+        &__container {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+            align-items: start;
+        }
+
+        img {
+            max-width: 100%;
+        }
+    }
+
+    .start-steps {
+        &__container {
+            grid-template-columns: repeat(2, 1fr);
+            gap: 30px;
+        }
+    }
 }
