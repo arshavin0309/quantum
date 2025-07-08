@@ -54,4 +54,18 @@
             gap: 30px;
         }
     }
+
+    .currencies-asked {
+        &__container {
+            grid-template-columns: 1fr 2fr;
+            gap: 30px;
+        }
+    }
+
+    .currencies-market {
+        &__container {
+            grid-template-columns: 1fr;
+            gap: 30px;
+        }
+    }
 }

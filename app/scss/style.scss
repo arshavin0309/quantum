@@ -1829,7 +1829,7 @@ p {
 
     &__container {
         display: grid;
-        grid-template-columns: 1fr 800px;
+        grid-template-columns: 1fr 810px;
         gap: 59px;
         align-items: start;
     }
@@ -1883,6 +1883,10 @@ p {
 }
 
 .currencies-asked {
+    h2 {
+        margin-bottom: 48px;
+    }
+
     &__container {
         display: grid;
         grid-template-columns: 1fr 730px;
@@ -1890,6 +1894,7 @@ p {
         align-items: start;
 
         img {
+            max-width: 100%;
             border-radius: 10px;
         }
     }
