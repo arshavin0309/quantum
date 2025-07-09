@@ -30,7 +30,7 @@
             right: -100%;
             width: 100%;
             max-width: 430px;
-            height: calc(100% - 86px);
+            height: calc(100% - 85px);
             flex-direction: column;
             align-items: start;
             background: var(--black);
@@ -40,6 +40,7 @@
 
             &.active {
                 right: 0;
+                box-shadow: -5px 5px 9px 0px rgba(254, 203, 105, 0.2);
             }
         }
 
@@ -61,8 +62,20 @@
                 width: 100%;
 
                 &>a {
+                    display: flex;
+                    align-items: center;
+                    justify-content: space-between;
                     padding: 20px 20px;
                     background: var(--black);
+
+                    &::after {
+                        content: '';
+                        display: block;
+                        width: 15px;
+                        height: 15px;
+                        background: url(../images/arrow-menu.svg) center / contain no-repeat;
+                        transition: var(--transition);
+                    }
                 }
 
                 &>.sub-menu {
@@ -83,6 +96,14 @@
                         &>a {
                             padding: 20px 30px;
                             text-align: initial;
+                        }
+                    }
+                }
+
+                &.active {
+                    &>a {
+                        &::after {
+                            transform: rotate(180deg);
                         }
                     }
                 }
@@ -115,6 +136,24 @@
 
         &__burger {
             display: block;
+
+            .burger-line {
+                transform-origin: center;
+            }
+
+            &.active {
+                .top {
+                    transform: translate(-3px, 4px) rotate(45deg);
+                }
+
+                .middle {
+                    opacity: 0;
+                }
+
+                .bottom {
+                    transform: translate(-3px, -3px) rotate(-45deg);
+                }
+            }
         }
     }
 
@@ -271,14 +310,6 @@
         }
     }
 
-    main {
-        &>section {
-            &:first-child {
-                background-size: auto 570px;
-            }
-        }
-    }
-
     .about-work {
         &__list {
             grid-template-columns: repeat(3, 1fr);
@@ -401,7 +432,11 @@
         }
     }
 
-    .currencies-forex {
+    .currencies-forex,
+    .indices-forex,
+    .commodities-forex,
+    .stocks-forex,
+    .cryptocurrencies-forex {
         &__list {
             grid-template-columns: repeat(2, 1fr);
         }
@@ -427,6 +462,19 @@
             width: 100%;
             height: 400px;
             object-fit: cover;
+        }
+    }
+
+    .analytics-widgets {
+        &__container {
+            display: flex;
+            flex-direction: column;
+        }
+
+        &__box {
+            padding: 0;
+            background: none;
+            border-radius: initial;
         }
     }
 }
