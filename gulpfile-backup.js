@@ -22,7 +22,15 @@ function fonts() {
     const destFolder = 'dist/fonts';
 
     if (!fs.existsSync(fontFolder)) {
-        return Promise.resolve(); // Возвращаем пустой промис, если папки нет
+        const { Readable } = require('stream');
+        return new Readable({ read() { this.push(null); } });
+    }
+
+    const fontFiles = fs.readdirSync(fontFolder).filter(file => !file.startsWith('.'));
+
+    if (fontFiles.length === 0) {
+        const { Readable } = require('stream');
+        return new Readable({ read() { this.push(null); } });
     }
 
     return src(`${fontFolder}/**/*`)
@@ -90,7 +98,8 @@ function scripts() {
         'node_modules/jquery/dist/jquery.js',
         'node_modules/jquery-ui/dist/jquery-ui.js',
         'node_modules/swiper/swiper-bundle.js',
-        'app/js/src/**/*.js',
+        'app/js/**/*.js',
+        '!app/js/main.min.js',
     ])
         .pipe(concat('main.min.js'))
         .pipe(uglify({
@@ -105,7 +114,7 @@ function styles() {
     return src('app/scss/style.scss')
         .pipe(sourcemaps.init())
         .pipe(scss({ outputStyle: 'compressed' }).on('error', scss.logError))
-        .pipe(autoprefixer({ cascade: false }))
+        .pipe(autoprefixer({ overrideBrowserslist: ['last 10 version'] }))
         .pipe(concat('style.min.css'))
         .pipe(sourcemaps.write())
         .pipe(dest('app/css'))
@@ -146,8 +155,8 @@ function watching() {
     watch(['app/images/src/**/*.svg'], svgIcons);
     watch(['app/js/**/*.js', '!app/js/main.min.js',], scripts);
     watch(['app/components/**/*.html', 'app/pages/**/*.html'], pages);
-    watch(['app/upload/**/*'], resources);
     watch(['app/*.html']).on('change', browserSync.reload);
+    watch(['app/upload/**/*'], resources);
 }
 
 function cleanDist() {
