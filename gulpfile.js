@@ -7,8 +7,6 @@ const browserSync = require('browser-sync').create(); // запускает ло
 const autoprefixer = require('gulp-autoprefixer'); // приводит css к кросбраузерности
 const clean = require('gulp-clean'); // удаление папок
 const avif = require('gulp-avif'); // конвертер в avif
-const webp = require('gulp-webp'); // конвертер в webp
-const imagemin = require('gulp-imagemin'); // сжимание картинок
 const newer = require('gulp-newer'); // кэш
 const fileInclude = require('gulp-file-include'); // подключение html к html
 const typograf = require('gulp-typograf'); // расставляет неразрывные пробелы в нужных местах
@@ -70,17 +68,11 @@ function pages() {
 
 function images() {
     return src(['app/images/src/*.*', '!app/images/src/*.svg'])
-        .pipe(newer('app/images/'))
+        .pipe(newer({
+            dest: 'app/images/',
+            ext: '.avif', // Сравниваем исходные файлы с их .avif версиями
+        }))
         .pipe(avif({ quality: 90 }))
-
-        .pipe(src(['app/images/src/*.*', '!app/images/src/*.svg']))
-        .pipe(newer('app/images/'))
-        .pipe(webp())
-
-        .pipe(src(['app/images/src/*.*', '!app/images/src/*.svg']))
-        .pipe(newer('app/images/'))
-        .pipe(imagemin())
-
         .pipe(dest('app/images/'))
         .pipe(browserSync.stream())
 }
