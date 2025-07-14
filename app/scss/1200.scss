@@ -124,6 +124,24 @@
                     &:after {
                         display: none;
                     }
+
+                    &>.sub-menu {
+                        &>.menu-item {
+                            &.lang-active {
+                                &>a {
+                                    color: var(--black);
+                                }
+                            }
+                        }
+                    }
+                }
+
+                &--desktop {
+                    display: none;
+                }
+
+                &--mobile {
+                    display: block;
                 }
             }
         }

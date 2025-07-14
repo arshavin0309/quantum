@@ -314,6 +314,10 @@ main {
                     background: url(../images/arrow.svg) center / contain no-repeat;
                 }
             }
+
+            &--mobile {
+                display: none;
+            }
         }
     }
 }
